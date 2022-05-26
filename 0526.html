@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .moji {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ここに新しい要素を追加したい -->
+
+    <!--  JavaScriptだけで、HTMLが書ける -->
+    <script>
+        // <div></div>を作って、newDiv という変数に入れる
+        const newDiv = document.createElement("div");
+
+        // textContent で "Helli World" を文字列に追加
+        // newDiv.textContent = "Hello World";
+
+        // P433 prepend で「newDIV」を「body」の最初の子要素として追加する
+        document.body.prepend(newDiv);
+
+
+        const newH2 = document.createElement("h2");
+
+        newH2.textContent = "見出し";
+
+        // querySelector で 「div」 を選択
+        document.querySelector("div").prepend(newH2);
+
+
+
+        const newP = document.createElement("p");
+
+        newP.textContent = "本文";
+
+        document.querySelector("div").append(newP);
+
+
+
+
+
+
+
+
+
+        // document.getElementById('test').remove();
+        // document.querySelector('p').setAttribute('class',"moji")
+
+
+    </script>
+</body>
+
+</html>
