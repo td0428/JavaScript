@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mondai {
+            margin-left: 130px;
+        }
+
+        #answer div {
+            background-color: rgb(160, 255, 156);
+            width: 200px;
+            height: 100px;
+            font-size: 50px;
+            text-align: center;
+            margin: 10px;
+            border: 3px solid rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        // mondaiのdiv
+        const newDiv = document.createElement("div")
+        document.body.append(newDiv)
+        newDiv.setAttribute('id', 'mondai');
+
+        // h1
+        const newH1 = document.createElement("h1")
+        newH1.textContent = "日本の首都は？"
+        document.querySelector("#mondai").append(newH1)
+
+        // answerをまとめるdiv
+        const newDiv00 = document.createElement("div")
+        document.body.append(newDiv00)
+        newDiv00.setAttribute("id", "answer")
+
+        // answerA
+        const newDiv01 = document.createElement("div")
+        document.querySelector("#answer").append(newDiv01)
+        newDiv01.setAttribute("id", "answerA")
+        newDiv01.textContent = "大阪"
+
+        // answerB
+        const newDiv02 = document.createElement("div")
+        document.querySelector("#answer").append(newDiv02)
+        newDiv02.setAttribute("id", "answerB")
+        newDiv02.textContent = "愛知"
+
+        // answerC
+        const newDiv03 = document.createElement("div")
+        document.querySelector("#answer").append(newDiv03)
+        newDiv03.setAttribute("id", "answerC")
+        newDiv03.textContent = "東京"
+
+        // answerD
+        const newDiv04 = document.createElement("div")
+        document.querySelector("#answer").append(newDiv04)
+        newDiv04.setAttribute("id", "answerD")
+        newDiv04.textContent = "福岡"
+
+        // 中身を変えるJavaSript
+        const seikai = "正解"
+        const huseikai = "不正解"
+
+        document.getElementById("answerA").addEventListener("click", function () {
+            this.style.backgroundColor = "gray"
+            this.textContent = huseikai
+            this.style.color = "blue"
+        })
+
+        document.getElementById("answerB").addEventListener("click", function () {
+            this.style.backgroundColor = "gray"
+            this.textContent = huseikai
+            this.style.color = "blue"
+        })
+
+        document.getElementById("answerC").addEventListener("click", function () {
+            this.style.backgroundColor = "skyblue"
+            this.textContent = seikai
+            this.style.color = "red"
+        })
+
+        document.getElementById("answerD").addEventListener("click", function () {
+            this.style.backgroundColor = "gray"
+            this.textContent = huseikai
+            this.style.color = "blue"
+        })
+    </script>
+</body>
+
+</html>
