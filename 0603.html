@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // p136 練習問題5.8
+        const arry = [10,20,23,47];
+
+        // 合計値を覚えさせる変数
+        let sum = 0;
+
+        // arry.lenrth で配列の長さ(4)が使える
+        for (let i = 0; i < arry.length; i++){
+            // arryから１個ずつ取り出す
+            console.log(arry[i]);
+            
+            // 取り出した値を今あるsumに加える
+            sum = sum + arry[i];
+        }
+
+
+        console.log(sum);
+
+        // p141 for...of文（拡張for文）
+        const fruits = ["りんご","バナナ","オレンジ"];
+
+        for( const value of fruits){
+            console.log(value);
+        }
+
+        // for...of文で練習問題5.8
+        sum = 0;
+        for(const number of arry){
+            console.log(number);
+            sum = sum + number;
+        }
+        console.log(sum);
+    </script>
+</body>
+</html>
