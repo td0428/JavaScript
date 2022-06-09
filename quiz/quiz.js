@@ -34,27 +34,33 @@ const makeSeikai = function(idName){
         this.style.backgroundColor="skyblue"
         this.textContent=seikai
         this.style.color="red"
+        this.setAttribute("class","seikai")
     })
 }
 
+const makeAnswer = function(idName, answer){
+
+    document.getElementById(idName).addEventListener('click', function (){
+        this.textContent=answer
+        this.style.color="red"
+    })
+}
 
 // 関数の実行
-makeFunction("answerA")
-makeFunction("answerB")
-makeSeikai("answerC")
-makeFunction("answerD")
-
-const syu = "終了"
+makeAnswer("answerA",fuseikai)
+makeAnswer("answerB",fuseikai)
+makeAnswer("answerC",seikai)
+makeAnswer("answerD",fuseikai)
 
 
 
 // setTimeoutを使って制限時間を５秒にする
+// 指定した要素（element）.textContent で文字を変更できる
+const syu = "終了"
+
 setTimeout(function(){
-    document.querySelector("#answerA").textContent = syu
-    document.querySelector("#answerB").textContent = syu
-    document.querySelector("#answerC").textContent = syu
-    document.querySelector("#answerD").textContent = syu
-},1000)
+    document.getElementById("mondai").textContent = syu
+},5000)
 
 
 // document.getElementById('answerA').addEventListener('click', function (){
