@@ -44,6 +44,18 @@ makeFunction("answerB")
 makeSeikai("answerC")
 makeFunction("answerD")
 
+const syu = "終了"
+
+
+
+// setTimeoutを使って制限時間を５秒にする
+setTimeout(function(){
+    document.querySelector("#answerA").textContent = syu
+    document.querySelector("#answerB").textContent = syu
+    document.querySelector("#answerC").textContent = syu
+    document.querySelector("#answerD").textContent = syu
+},1000)
+
 
 // document.getElementById('answerA').addEventListener('click', function (){
 //     this.style.backgroundColor="gray"
