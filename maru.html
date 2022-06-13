@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #masuA {
+            display: flex;
+        }
+
+        #masuB {
+            display: flex;
+        }
+
+        #masuC {
+            display: flex;
+        }
+
+        .masu {
+            padding: 50px;
+            background-color: skyblue;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="masuA">
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+    </div>
+    <div id="masuB">
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+    </div>
+    <div id="masuC">
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+    </div>
+
+
+    <script>
+        const M ="〇"
+        const maru = document.querySelector(".masu")
+        
+        maru.addEventListener("click",function(){
+            maru.textContent = M
+        })
+    </script>
+</body>
+
+</html>
