@@ -16,34 +16,38 @@ for (let i = 0;i < 4;i++){
 const seikai = "正解"
 const fuseikai = "不正解"
 
-// 引数idNameを利用して、A,B,Dを当てはめる
-const makeFunction = function(idName){
 
-    document.getElementById(idName).addEventListener('click', function (){
-        this.style.backgroundColor="gray"
-        this.textContent= fuseikai
-        this.style.color="blue"
-        this.setAttribute("class","fuseikai")
-    })
+        function FuseikaiChange(event){
+            divF.textContent= fuseikai
+            divF.style.color = "blue"
+            divF.setAttribute("class","fuseikai")
+        }
+
+// 引数idNameを利用して、A,B,Dを当てはめる
+const makeFuseikai = function (idName){
+
+
+
+    divF.addEventListener('click',FuseikaiChange)
 }
 
 
 const makeSeikai = function(idName){
 
     document.getElementById(idName).addEventListener('click', function (){
-        this.style.backgroundColor="skyblue"
         this.textContent=seikai
-        this.style.color="red"
         this.setAttribute("class","seikai")
     })
 }
 
 const makeAnswer = function(idName, answer){
+    const divF = document.getElementById(idName)
 
-    document.getElementById(idName).addEventListener('click', function (){
-        this.textContent=answer
-        this.style.color="red"
-    })
+    function FuseikaiChange(event){
+        divF.textContent= answer
+        divF.style.color = "blue"
+    }
+    divF.addEventListener('click', FuseikaiChange)
 }
 
 // 関数の実行
