@@ -19,39 +19,61 @@
             display: flex;
         }
 
-        .masu {
-            padding: 50px;
+        #masuA div,
+        #masuB div,
+        #masuC div {
+            width: 50px;
+            height: 50px;
+            margin: 0;
+            padding: 100px;
             background-color: skyblue;
             border: 1px solid black;
+            font-size: 100px;
+
         }
     </style>
 </head>
 
 <body>
     <div id="masuA">
-        <div class="masu"></div>
-        <div class="masu"></div>
-        <div class="masu"></div>
+        <div id="masu1"></div>
+        <div id="masu2"></div>
+        <div id="masu3"></div>
     </div>
     <div id="masuB">
-        <div class="masu"></div>
-        <div class="masu"></div>
-        <div class="masu"></div>
+        <div id="masu4"></div>
+        <div id="masu5"></div>
+        <div id="masu6"></div>
     </div>
     <div id="masuC">
-        <div class="masu"></div>
-        <div class="masu"></div>
-        <div class="masu"></div>
+        <div id="masu7"></div>
+        <div id="masu8"></div>
+        <div id="masu9"></div>
     </div>
 
 
     <script>
-        const M ="〇"
-        const maru = document.querySelector(".masu")
-        
-        maru.addEventListener("click",function(){
-            maru.textContent = M
-        })
+        const M = "〇"
+        const B = "×"
+        let count = 0;
+
+        const masuIDs = ["masu1", "masu2", "masu3", "masu4", "masu5", "masu6", "masu7", "masu8", "masu9"];
+
+        for (let i = 0; i < masuIDs.length; i++) {
+
+            const masu = document.getElementById(masuIDs[i]);
+
+            masu.addEventListener("click", function () {
+                if (count % 2 === 0) {
+                    masu.textContent = M
+                    
+                } else if (count % 2 === 1) {
+                    masu.textContent = B
+
+                }
+                count = count + 1
+            })
+        }
     </script>
 </body>
 
