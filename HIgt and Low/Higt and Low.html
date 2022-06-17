@@ -8,8 +8,9 @@
     <title>Document</title>
     <style>
         body {
+
             font-size: 50px;
-            
+
         }
 
         #Rs {
@@ -29,12 +30,18 @@
         }
 
         #L {
+            width: 80px;
+            height: 50px;
+            font-size: 20px;
             margin-right: 50px;
             color: blue;
             border: 2px solid black;
         }
 
-        #H{
+        #H {
+            width: 80px;
+            height: 50px;
+            font-size: 20px;
             color: red;
             border: 2px solid black;
         }
@@ -59,8 +66,8 @@
         <span id="nR2">0</span>
     </div>
     <div id="main">
-        <div id="L">Low</div>
-        <div id="H">High</div>
+        <input type="button" value="Low" id="L">
+        <input type="button" value="Higt" id="H">
     </div>
     <div id="start">start</div>
     <div id="kn">
@@ -113,7 +120,9 @@
                         nR2.textContent = 0
                     }, 500)
                 } else if (Ran1 === Ran2) {
-                    nR2.textContent = 0
+                    setTimeout(function () {
+                        nR2.textContent = 0
+                    }, 500)
                 }
             })
 
@@ -145,7 +154,9 @@
                         nR2.textContent = 0
                     }, 500)
                 } else if (Ran1 === Ran2) {
-                    nR2.textContent = 0
+                    setTimeout(function () {
+                        nR2.textContent = 0
+                    },500)
                 }
             })
         })
