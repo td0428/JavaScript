@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #main {
+            width: 200px;
+            height: 200px;
+            padding: 0 210px 170px 0;
+            background-color: yellow;
+            display: flex;
+        }
+        .B1,
+        .B2,
+        .B3,
+        .B4,
+        .B5,
+        .free {
+            width: 20px;
+            height: 20px;
+            margin: 10px;
+            padding: 20px;
+            background-color: orange;
+            border: 1px solid ;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="R">
+            <div class="B1"></div>
+            <div class="B1"></div>
+            <div class="B1"></div>
+            <div class="B1"></div>
+            <div class="B1"></div>
+        </div>
+        <div class="R">
+            <div class="B2"></div>
+            <div class="B2"></div>
+            <div class="B2"></div>
+            <div class="B2"></div>
+            <div class="B2"></div>
+        </div>
+        <div class="R">
+            <div class="B3"></div>
+            <div class="B3"></div>
+            <div class="free">FREE</div>
+            <div class="B3"></div>
+            <div class="B3"></div>
+        </div>
+        <div class="R">
+            <div class="B4"></div>
+            <div class="B4"></div>
+            <div class="B4"></div>
+            <div class="B4"></div>
+            <div class="B4"></div>
+        </div>
+        <div class="R">
+            <div class="B5"></div>
+            <div class="B5"></div>
+            <div class="B5"></div>
+            <div class="B5"></div>
+            <div class="B5"></div>
+        </div>
+    </div>
+
+    <script>
+
+        const B1 = document.querySelectorAll('.B1')
+        const B2 = document.querySelectorAll('.B2')
+        const B3 = document.querySelectorAll('.B3')
+        const B4 = document.querySelectorAll('.B4')
+        const B5 = document.querySelectorAll('.B5')
+
+
+
+        B1.forEach(function (B1) {
+            const RanA = 1 + Math.floor(Math.random() * 15)
+            B1.textContent = RanA;
+        })
+        B2.forEach(function (B2) {
+            const RanB = 16 + Math.floor(Math.random() * 15)
+            B2.textContent = RanB;
+        })
+        B3.forEach(function (B3) {
+            const RanC = 31 + Math.floor(Math.random() * 15)
+            B3.textContent = RanC;
+        })
+        B4.forEach(function (B4) {
+            const RanD = 46 + Math.floor(Math.random() * 15)
+            B4.textContent = RanD;
+        })
+        B5.forEach(function (B5) {
+            const RanE = 61 + Math.floor(Math.random() * 15)
+            B5.textContent = RanE;
+        })
+    </script>
+</body>
+
+</html>

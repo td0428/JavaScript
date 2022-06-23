@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 50px;
+
+        }
+
+        #Rs {
+            display: flex;
+        }
+
+        #R1 {
+            margin-right: 50px;
+        }
+
+        #nR1 {
+            margin-right: 50px;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #L {
+            width: 80px;
+            height: 50px;
+            font-size: 20px;
+            margin-right: 50px;
+            color: blue;
+            border: 2px solid black;
+        }
+
+        #H {
+            width: 80px;
+            height: 50px;
+            font-size: 20px;
+            color: red;
+            border: 2px solid black;
+        }
+
+        #kn {
+            display: flex;
+        }
+
+        #katisu {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Rs">
+        <div id="R1">元</div>
+        <div id="R2">新</div>
+    </div>
+    <div id="nRs">
+        <span id="nR1">0</span>
+        <span id="nR2">0</span>
+    </div>
+    <div id="main">
+        <input type="button" value="Low" id="L">
+        <input type="button" value="Higt" id="H">
+    </div>
+    <div id="start">start</div>
+    <div id="kn">
+        <div id="katisu">勝ち数</div>
+        <span id="number">0</span>
+    </div>
+
+
+    <script>
+
+
+        const H = document.getElementById("H");
+        const L = document.getElementById("L");
+        const start = document.getElementById("start");
+        const number = document.querySelector("#number");
+        const nR1 = document.querySelector("#nR1");
+        const nR2 = document.querySelector("#nR2");
+        let count = 0;
+
+
+
+
+
+        start.addEventListener("click", function (event) {
+            let Ran1 = 1 + Math.floor(Math.random() * 13);
+
+            nR1.textContent = Ran1;
+
+            H.addEventListener("click", function (event) {
+                let Ran2 = 1 + Math.floor(Math.random() * 13);
+                nR2.textContent = Ran2;
+
+                if (Ran1 > Ran2) {
+                    count = 0;
+                    number.textContent = count;
+                    setTimeout(function () {
+
+                        Ran1 = Ran2;
+                        nR1.textContent = Ran2;
+                        nR2.textContent = 0
+                    }, 500)
+
+                } else if (Ran1 < Ran2) {
+                    count++;
+                    number.textContent = count;
+                    setTimeout(function () {
+
+                        Ran1 = Ran2;
+                        nR1.textContent = Ran2;
+                        nR2.textContent = 0
+                    }, 500)
+                } else if (Ran1 === Ran2) {
+                    setTimeout(function () {
+                        nR2.textContent = 0
+                    }, 500)
+                }
+            })
+
+
+
+            L.addEventListener("click", function (event) {
+                let Ran2 = 1 + Math.floor(Math.random() * 13);
+
+                nR2.textContent = Ran2;
+
+                if (Ran1 < Ran2) {
+                    count = 0;
+                    number.textContent = count;
+                    setTimeout(function () {
+
+                        Ran1 = Ran2;
+                        nR1.textContent = Ran2;
+                        nR2.textContent = 0
+                    }, 500)
+
+
+                } else if (Ran1 > Ran2) {
+                    count++;
+                    number.textContent = count;
+                    setTimeout(function () {
+
+                        Ran1 = Ran2;
+                        nR1.textContent = Ran2;
+                        nR2.textContent = 0
+                    }, 500)
+                } else if (Ran1 === Ran2) {
+                    setTimeout(function () {
+                        nR2.textContent = 0
+                    },500)
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
