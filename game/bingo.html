@@ -15,6 +15,7 @@
             background-color: yellow;
             display: flex;
         }
+
         .B1,
         .B2,
         .B3,
@@ -26,7 +27,7 @@
             margin: 10px;
             padding: 20px;
             background-color: orange;
-            border: 1px solid ;
+            border: 1px solid;
         }
     </style>
 </head>
@@ -78,28 +79,50 @@
         const B4 = document.querySelectorAll('.B4')
         const B5 = document.querySelectorAll('.B5')
 
+        let check = []
+        for (i = 1; i < 16; i++) {
+            check.push(i);
+        }
 
 
+
+        for (i = 0; i < 15; i++) {
+            let a = Math.floor(Math.random() * 15)
+            let b = Math.floor(Math.random() * 15)
+            let tmp = check[a];
+            check[a] = check[b];
+            check[b] = tmp;
+        }
         B1.forEach(function (B1) {
-            const RanA = 1 + Math.floor(Math.random() * 15)
+            const RanA = check
             B1.textContent = RanA;
         })
-        B2.forEach(function (B2) {
-            const RanB = 16 + Math.floor(Math.random() * 15)
-            B2.textContent = RanB;
-        })
-        B3.forEach(function (B3) {
-            const RanC = 31 + Math.floor(Math.random() * 15)
-            B3.textContent = RanC;
-        })
-        B4.forEach(function (B4) {
-            const RanD = 46 + Math.floor(Math.random() * 15)
-            B4.textContent = RanD;
-        })
-        B5.forEach(function (B5) {
-            const RanE = 61 + Math.floor(Math.random() * 15)
-            B5.textContent = RanE;
-        })
+
+
+        console.log(check)
+
+        // for(j = 0; j < 5;j++){
+        //     const A = check[j];
+        //     B1.textContent = A;
+        // }
+
+
+        // B2.forEach(function (B2) {
+        //     const RanB = 16 + Math.floor(Math.random() * 15)
+        //     B2.textContent = RanB;
+        // })
+        // B3.forEach(function (B3) {
+        //     const RanC = 31 + Math.floor(Math.random() * 15)
+        //     B3.textContent = RanC;
+        // })
+        // B4.forEach(function (B4) {
+        //     const RanD = 46 + Math.floor(Math.random() * 15)
+        //     B4.textContent = RanD;
+        // })
+        // B5.forEach(function (B5) {
+        //     const RanE = 61 + Math.floor(Math.random() * 15)
+        //     B5.textContent = RanE;
+        // })
     </script>
 </body>
 
