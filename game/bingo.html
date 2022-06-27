@@ -9,10 +9,21 @@
 
     <style>
         #main {
-            width: 200px;
-            height: 200px;
-            padding: 0 210px 170px 0;
-            background-color: yellow;
+            width: 500px;
+            height: 500px;
+            padding: 0 210px 260px 0;
+            background-color: orange;
+
+        }
+
+        h1 {
+            margin: 0 0 0 60px;
+            letter-spacing: 105px;
+            font-size: 50px;
+            color: purple;
+        }
+
+        #Rs {
             display: flex;
         }
 
@@ -22,52 +33,58 @@
         .B4,
         .B5,
         .free {
-            width: 20px;
-            height: 20px;
+            width: 80px;
+            height: 80px;
             margin: 10px;
             padding: 20px;
-            background-color: orange;
+            background-color: yellow;
+            border-radius: 90px 90px 10px 10px;
             border: 1px solid;
+            font-size: 35px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
     <div id="main">
-        <div class="R">
-            <div class="B1"></div>
-            <div class="B1"></div>
-            <div class="B1"></div>
-            <div class="B1"></div>
-            <div class="B1"></div>
-        </div>
-        <div class="R">
-            <div class="B2"></div>
-            <div class="B2"></div>
-            <div class="B2"></div>
-            <div class="B2"></div>
-            <div class="B2"></div>
-        </div>
-        <div class="R">
-            <div class="B3"></div>
-            <div class="B3"></div>
-            <div class="free">FREE</div>
-            <div class="B3"></div>
-            <div class="B3"></div>
-        </div>
-        <div class="R">
-            <div class="B4"></div>
-            <div class="B4"></div>
-            <div class="B4"></div>
-            <div class="B4"></div>
-            <div class="B4"></div>
-        </div>
-        <div class="R">
-            <div class="B5"></div>
-            <div class="B5"></div>
-            <div class="B5"></div>
-            <div class="B5"></div>
-            <div class="B5"></div>
+        <h1>BINGO</h1>
+        <div id="Rs">
+            <div class="R">
+                <div class="B1"></div>
+                <div class="B1"></div>
+                <div class="B1"></div>
+                <div class="B1"></div>
+                <div class="B1"></div>
+            </div>
+            <div class="R">
+                <div class="B2"></div>
+                <div class="B2"></div>
+                <div class="B2"></div>
+                <div class="B2"></div>
+                <div class="B2"></div>
+            </div>
+            <div class="R">
+                <div class="B3"></div>
+                <div class="B3"></div>
+                <div class="free">FREE</div>
+                <div class="B3"></div>
+                <div class="B3"></div>
+            </div>
+            <div class="R">
+                <div class="B4"></div>
+                <div class="B4"></div>
+                <div class="B4"></div>
+                <div class="B4"></div>
+                <div class="B4"></div>
+            </div>
+            <div class="R">
+                <div class="B5"></div>
+                <div class="B5"></div>
+                <div class="B5"></div>
+                <div class="B5"></div>
+                <div class="B5"></div>
+            </div>
         </div>
     </div>
 
@@ -79,50 +96,100 @@
         const B4 = document.querySelectorAll('.B4')
         const B5 = document.querySelectorAll('.B5')
 
-        let check = []
+        let checkA = []
+        let checkB = []
+        let checkC = []
+        let checkD = []
+        let checkE = []
+
+        //1列目
+        //配列checkAの中に1~15の数字を作る
         for (i = 1; i < 16; i++) {
-            check.push(i);
+            checkA.push(i);
         }
+        //配列checkAに数字を乱数で入れ替え
+        for (i = 0; i < 15; i++) {
+            let a = Math.floor(Math.random() * 15)
+            let b = Math.floor(Math.random() * 15)
+            let tmp = checkA[a];
+            checkA[a] = checkA[b];
+            checkA[b] = tmp;
+        }
+        //配列checkAの先頭から1つずつ表示
+        B1.forEach(function (B1) {
+            B1.textContent = checkA.shift()
+        })
+        //配列checkAに残っている数字を表示（表示しなくても問題はない）
+        console.log(checkA)
 
 
+        //2列目
+        for (i = 16; i < 31; i++) {
+            checkB.push(i);
+        }
 
         for (i = 0; i < 15; i++) {
             let a = Math.floor(Math.random() * 15)
             let b = Math.floor(Math.random() * 15)
-            let tmp = check[a];
-            check[a] = check[b];
-            check[b] = tmp;
+            let tmp = checkB[a];
+            checkB[a] = checkB[b];
+            checkB[b] = tmp;
         }
-        B1.forEach(function (B1) {
-            const RanA = check
-            B1.textContent = RanA;
+        B2.forEach(function (B2) {
+            B2.textContent = checkB.shift()
         })
+        console.log(checkB)
 
+        //3列目
+        for (i = 31; i < 46; i++) {
+            checkC.push(i);
+        }
 
-        console.log(check)
+        for (i = 0; i < 15; i++) {
+            let a = Math.floor(Math.random() * 15)
+            let b = Math.floor(Math.random() * 15)
+            let tmp = checkC[a];
+            checkC[a] = checkC[b];
+            checkC[b] = tmp;
+        }
+        B3.forEach(function (B3) {
+            B3.textContent = checkC.shift()
+        })
+        console.log(checkC)
 
-        // for(j = 0; j < 5;j++){
-        //     const A = check[j];
-        //     B1.textContent = A;
-        // }
+        //4列目
+        for (i = 46; i < 61; i++) {
+            checkD.push(i);
+        }
+        for (i = 0; i < 15; i++) {
+            let a = Math.floor(Math.random() * 15)
+            let b = Math.floor(Math.random() * 15)
+            let tmp = checkD[a];
+            checkD[a] = checkD[b];
+            checkD[b] = tmp;
+        }
+        B4.forEach(function (B4) {
+            B4.textContent = checkD.shift()
+        })
+        console.log(checkD)
 
+        //5列目
+        for (i = 61; i < 76; i++) {
+            checkE.push(i);
+        }
+        for (i = 0; i < 15; i++) {
+            let a = Math.floor(Math.random() * 15)
+            let b = Math.floor(Math.random() * 15)
+            let tmp = checkE[a];
+            checkE[a] = checkE[b];
+            checkE[b] = tmp;
+        }
+        B5.forEach(function (B5) {
+            B5.textContent = checkE.shift()
 
-        // B2.forEach(function (B2) {
-        //     const RanB = 16 + Math.floor(Math.random() * 15)
-        //     B2.textContent = RanB;
-        // })
-        // B3.forEach(function (B3) {
-        //     const RanC = 31 + Math.floor(Math.random() * 15)
-        //     B3.textContent = RanC;
-        // })
-        // B4.forEach(function (B4) {
-        //     const RanD = 46 + Math.floor(Math.random() * 15)
-        //     B4.textContent = RanD;
-        // })
-        // B5.forEach(function (B5) {
-        //     const RanE = 61 + Math.floor(Math.random() * 15)
-        //     B5.textContent = RanE;
-        // })
+        })
+        console.log(checkE)
+
     </script>
 </body>
 
