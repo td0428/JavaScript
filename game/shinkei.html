@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #spade,
+        #heart,
+        #dia,
+        #clover {
+            margin-bottom: 20px;
+            display: flex;
+        }
+
+        .Scard {
+            margin-right: 20px;
+            padding: 60px 30px;
+            background-color: blue;
+            color: #ffffff;
+        }
+
+        .Hcard {
+            margin-right: 20px;
+            padding: 20px 10px;
+            padding: 60px 30px;
+            background-color: red;
+            color: #ffffff;
+        }
+
+        .Dcard {
+            margin-right: 20px;
+            padding: 20px 10px;
+            padding: 60px 30px;
+            background-color: pink;
+            color: #000000;
+        }
+
+        .Ccard {
+            margin-right: 20px;
+            padding: 20px 10px;
+            padding: 60px 30px;
+            background-color: yellow;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="spade"></div>
+        <div id="heart"></div>
+        <div id="dia"></div>
+        <div id="clover"></div>
+
+    </div>
+
+    <script>
+        const CardBox = []
+        for (i = 13; i > 0; i--) {
+            const newSpade = document.createElement("div");
+            newSpade.setAttribute("class", "Scard");
+            newSpade.textContent = [i]
+            document.getElementById("spade").prepend(newSpade);
+            CardBox.push("S" + i)
+
+            const newHeart = document.createElement("div");
+            newHeart.setAttribute("class", "Hcard");
+            newHeart.textContent = [i]
+            document.getElementById("heart").prepend(newHeart);
+            CardBox.push("H" + i)
+
+            const newDia = document.createElement("div");
+            newDia.setAttribute("class", "Dcard");
+            newDia.textContent = [i]
+            document.getElementById("dia").prepend(newDia);
+            CardBox.push("D" + i)
+
+            const newClover = document.createElement("div");
+            newClover.setAttribute("class", "Ccard");
+            newClover.textContent = [i]
+            document.getElementById("clover").prepend(newClover);
+            CardBox.push("C" + i)
+        }
+
+
+
+
+        // for (j = 0; j < CardBox.length; j++) {
+
+        //     var a = Math.floor(Math.random() * 52);
+        //     var b = Math.floor(Math.random() * 52);
+
+        //     var CardBox_tmp = CardBox[a];
+
+        //     CardBox[a] = CardBox[b];
+
+        //     CardBox[b] = CardBox_tmp;
+        // }
+
+        console.log(CardBox)
+    </script>
+</body>
+
+</html>
