@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .B{
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+        <div class="B"></div>
+        <div class="B"></div>
+        <div class="B"></div>
+        <div class="B"></div>
+        <div class="B"></div>
+    </div>
+    <script>
+        const array = [];//arrayという名前の箱を作成
+
+        const B1 = document.querySelectorAll(".B")//HTMLのclass="B"をまとめてB1に代入
+
+
+
+        /*----------↓arrayの箱に整数を作ります↓----------*/
+
+        while (array.length < 5) {//arrayの中が5個になるまで｛｝の内容を繰り返す
+
+            const rand = 1+ Math.floor(Math.random() * 15);//Math.rabdomで1~15の「小数点付き」の数字を作る
+                                                           //Math.floorで小数点を削除して整数にしている
+                                                           //作った整数をrandに代入
+
+            if (!array.includes(rand)) {//   if         (!           array.includes(rand))
+                                        //（もし）（!は条件の反転）（arrayの箱に同じ数字があれば）
+                                        //「!」付いているので「もしarrayの箱に同じ数字が「無ければ」」になっている
+
+                array.push(rand)//arrayの箱に数字を入れる
+
+            }//if条件の終わり
+
+        }//while{}を5回繰り返す
+
+        /*----------↑arrayの箱に整数を作ります↑----------*/
+
+
+
+        /*----------↓arrayの箱の内容を画面に表示↓----------*/
+
+        B1.forEach(function (B1) {//forEachは箱や要素の中身の数だけループする　(授業でやったかは分からないので「へ～」ぐらいに思ってください)
+
+            B1.textContent = array.shift()//B1(HTMLのclass="B")に対してarrayの中身を表示していく
+        })
+
+        /*----------↑arrayの箱の内容を画面に表示↑----------*/
+
+    </script>
+</body>
+
+</html>

@@ -11,10 +11,6 @@
         #main {
             width: 500px;
             height: 500px;
-<<<<<<< HEAD
-            padding: 0 210px 170px 0;
-            background-color: orange;
-=======
             padding: 0 210px 260px 0;
             background-color: orange;
 
@@ -28,7 +24,6 @@
         }
 
         #Rs {
->>>>>>> 6edcf636cfc93b325cd839b9048000a868c30b56
             display: flex;
         }
 
@@ -42,24 +37,11 @@
             height: 80px;
             margin: 10px;
             padding: 20px;
-<<<<<<< HEAD
-<<<<<<< HEAD
             background-color: yellow;
             border-radius: 90px 90px 10px 10px;
             border: 1px solid;
             font-size: 35px;
             text-align: center;
-=======
-            background-color: orange;
-            border: 1px solid;
->>>>>>> 3a2de6ca38e6f329d524e08d6f5552437d9d31b9
-=======
-            background-color: yellow;
-            border-radius: 90px 90px 10px 10px;
-            border: 1px solid;
-            font-size: 35px;
-            text-align: center;
->>>>>>> 6edcf636cfc93b325cd839b9048000a868c30b56
         }
     </style>
 </head>
@@ -125,6 +107,7 @@
         for (i = 1; i < 16; i++) {
             checkA.push(i);
         }
+
         //配列checkAに数字を乱数で入れ替え
         for (i = 0; i < 15; i++) {
             let a = Math.floor(Math.random() * 15)
@@ -133,6 +116,7 @@
             checkA[a] = checkA[b];
             checkA[b] = tmp;
         }
+
         //配列checkAの先頭から1つずつ表示
         B1.forEach(function (B1) {
             B1.textContent = checkA.shift()
@@ -141,37 +125,10 @@
         console.log(checkA)
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        const arr = []
-        const check = Array(5).fill(0);
-        for (i = 0; i < check.length; i++) {
-            check[i] = 1 + Math.floor(Math.random() * 15)
-            // while (true) {
-
-            //     if (check[0] != check[1] && check[1] != check[2] && check[2] != check[3] && check[3] != check[4]) {
-            //         // const A = check[j]
-            //         // B1.textContent = A;
-            //         console.log("d")
-            //         break;
-            //     } else if (check[0] == check[1] && check[1] == check[2] && check[2] == check[3] && check[3] == check[4]) {
-            //         console.log("a")
-            //         break;
-            //     }
-            // }
-        }
-
-        const A =
-            console.log(check)
-
-
-=======
-=======
         //2列目
         for (i = 16; i < 31; i++) {
             checkB.push(i);
         }
->>>>>>> 6edcf636cfc93b325cd839b9048000a868c30b56
 
         for (i = 0; i < 15; i++) {
             let a = Math.floor(Math.random() * 15)
@@ -180,43 +137,15 @@
             checkB[a] = checkB[b];
             checkB[b] = tmp;
         }
-<<<<<<< HEAD
->>>>>>> 3a2de6ca38e6f329d524e08d6f5552437d9d31b9
-        B1.forEach(function (B1) {
-            const RanA = check
-            B1.textContent = RanA;
-=======
-        B2.forEach(function (B2) {
-            B2.textContent = checkB.shift()
->>>>>>> 6edcf636cfc93b325cd839b9048000a868c30b56
+        B2.forEach(function (a) {
+            a.textContent = checkB.shift()
         })
         console.log(checkB)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        B2.forEach(function (B2) {
-            const RanB = 16 + Math.floor(Math.random() * 15)
-            B2.textContent = RanB;
-        })
-        B3.forEach(function (B3) {
-            const RanC = 31 + Math.floor(Math.random() * 15)
-            B3.textContent = RanC;
-        })
-        B4.forEach(function (B4) {
-            const RanD = 46 + Math.floor(Math.random() * 15)
-            B4.textContent = RanD;
-        })
-        B5.forEach(function (B5) {
-            const RanE = 61 + Math.floor(Math.random() * 15)
-            B5.textContent = RanE;
-        })
-=======
-=======
         //3列目
         for (i = 31; i < 46; i++) {
             checkC.push(i);
         }
->>>>>>> 6edcf636cfc93b325cd839b9048000a868c30b56
 
         for (i = 0; i < 15; i++) {
             let a = Math.floor(Math.random() * 15)
@@ -263,26 +192,6 @@
         })
         console.log(checkE)
 
-<<<<<<< HEAD
-        // B2.forEach(function (B2) {
-        //     const RanB = 16 + Math.floor(Math.random() * 15)
-        //     B2.textContent = RanB;
-        // })
-        // B3.forEach(function (B3) {
-        //     const RanC = 31 + Math.floor(Math.random() * 15)
-        //     B3.textContent = RanC;
-        // })
-        // B4.forEach(function (B4) {
-        //     const RanD = 46 + Math.floor(Math.random() * 15)
-        //     B4.textContent = RanD;
-        // })
-        // B5.forEach(function (B5) {
-        //     const RanE = 61 + Math.floor(Math.random() * 15)
-        //     B5.textContent = RanE;
-        // })
->>>>>>> 3a2de6ca38e6f329d524e08d6f5552437d9d31b9
-=======
->>>>>>> 6edcf636cfc93b325cd839b9048000a868c30b56
     </script>
 </body>
 
