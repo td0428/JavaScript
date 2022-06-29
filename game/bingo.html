@@ -108,7 +108,6 @@
             checkA.push(i);
         }
 
-        console.log(checkA)
         //配列checkAに数字を乱数で入れ替え
         for (i = 0; i < 15; i++) {
             let a = Math.floor(Math.random() * 15)
@@ -117,7 +116,7 @@
             checkA[a] = checkA[b];
             checkA[b] = tmp;
         }
-        console.log(checkA)
+
         //配列checkAの先頭から1つずつ表示
         B1.forEach(function (B1) {
             B1.textContent = checkA.shift()
