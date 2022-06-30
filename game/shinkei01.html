@@ -8,13 +8,17 @@
     <title>Document</title>
 
     <style>
-        #all {
+        #all,
+        #Card1,
+        #Card2,
+        #Card3 {
             margin-bottom: 20px;
             display: flex;
         }
 
 
         .Scard {
+            min-width: 20px;
             margin-right: 20px;
             padding: 60px 30px;
             background-color: blue;
@@ -22,6 +26,7 @@
         }
 
         .Hcard {
+            min-width: 20px;
             margin-right: 20px;
             padding: 20px 10px;
             padding: 60px 30px;
@@ -30,6 +35,7 @@
         }
 
         .Dcard {
+            min-width: 20px;
             margin-right: 20px;
             padding: 20px 10px;
             padding: 60px 30px;
@@ -38,6 +44,7 @@
         }
 
         .Ccard {
+            min-width: 20px;
             margin-right: 20px;
             padding: 20px 10px;
             padding: 60px 30px;
@@ -51,11 +58,19 @@
     <div id="main">
         <div id="all"></div>
         <div id="Card1"></div>
+        <div id="Card2"></div>
+        <div id="Card3"></div>
+
+
 
     </div>
 
     <script>
+
         const CardBox = []
+
+
+        //4種類のdivを作成し、allに全部入れる
         for (i = 13; i > 0; i--) {
             const newSpade = document.createElement("div");
             newSpade.setAttribute("class", "Scard");
@@ -95,7 +110,10 @@
 
         const ALL = document.getElementById("all")
 
-        for (j = 0; j < 100; j++) {
+
+
+        //allの中身を200回混ぜてぐちゃぐちゃにしている
+        for (j = 0; j < 200; j++) {
             var ranA = Math.floor(Math.random() * 13);
             var ranB = Math.floor(Math.random() * 13);
             var ranC = Math.floor(Math.random() * 13);
@@ -113,10 +131,26 @@
             const c = Ccard[ranD]
             ALL.appendChild(c)
         }
+
         const Card1 = document.getElementById("Card1")
-        for(k = 0;k < 14;k++){
-            const C1 = ALL[k]
-            Card1.appendChild(C1)
+        const Card2 = document.getElementById("Card2")
+        const Card3 = document.getElementById("Card3")
+
+
+
+        //allから3種類の場所に13個ずつ分配
+        //all,Card1~3の4種類の場所がある
+        for (k = 0; k < 13; k++) {
+            const CAll = ALL.children[k]
+            Card1.append(CAll)
+        }
+        for (k = 0; k < 13; k++) {
+            const CAll = ALL.children[k]
+            Card2.append(CAll)
+        }
+        for (k = 0; k < 13; k++) {
+            const CAll = ALL.children[k]
+            Card3.append(CAll)
         }
 
         console.log(CardBox)

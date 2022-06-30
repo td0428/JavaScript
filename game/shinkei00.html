@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #all,#Card1,#Card2,#Card3{
+            margin-bottom: 20px;
+            display: flex;
+        }
+
+
+        .Scard {
+            min-width:20px;
+            margin-right: 20px;
+            padding: 60px 30px;
+            background-color: blue;
+            color: #ffffff;
+        }
+
+        .Hcard {
+            min-width:20px;
+            margin-right: 20px;
+            padding: 20px 10px;
+            padding: 60px 30px;
+            background-color: red;
+            color: #ffffff;
+        }
+
+        .Dcard {
+            min-width:20px;
+            margin-right: 20px;
+            padding: 20px 10px;
+            padding: 60px 30px;
+            background-color: pink;
+            color: #000000;
+        }
+
+        .Ccard {
+            min-width:20px;
+            margin-right: 20px;
+            padding: 20px 10px;
+            padding: 60px 30px;
+            background-color: yellow;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="all"></div>
+        <div id="Card1"></div>
+        <div id="Card2"></div>
+        <div id="Card3"></div>
+
+
+    </div>
+
+    <script>
+        const CardBox = []
+        for (i = 13; i > 0; i--) {
+            const newSpade = document.createElement("div");
+            newSpade.setAttribute("class", "Scard");
+            newSpade.textContent = [i]
+            document.getElementById("all").prepend(newSpade);
+            CardBox.push("S" + i)
+        }
+
+        for (i = 13; i > 0; i--) {
+            const newHeart = document.createElement("div");
+            newHeart.setAttribute("class", "Hcard");
+            newHeart.textContent = [i]
+            document.getElementById("all").prepend(newHeart);
+            CardBox.push("H" + i)
+        }
+
+        for (i = 13; i > 0; i--) {
+            const newDia = document.createElement("div");
+            newDia.setAttribute("class", "Dcard");
+            newDia.textContent = [i]
+            document.getElementById("all").prepend(newDia);
+            CardBox.push("D" + i)
+        }
+
+        for (i = 13; i > 0; i--) {
+            const newClover = document.createElement("div");
+            newClover.setAttribute("class", "Ccard");
+            newClover.textContent = [i]
+            document.getElementById("all").prepend(newClover);
+            CardBox.push("C" + i)
+        }
+
+        const Scard = document.getElementsByClassName("Scard")
+        const Hcard = document.getElementsByClassName("Hcard")
+        const Dcard = document.getElementsByClassName("Dcard")
+        const Ccard = document.getElementsByClassName("Ccard")
+
+        const ALL = document.getElementById("all")
+
+        for (j = 0; j < 200; j++) {
+            var ranA = Math.floor(Math.random() * 13);
+            var ranB = Math.floor(Math.random() * 13);
+            var ranC = Math.floor(Math.random() * 13);
+            var ranD = Math.floor(Math.random() * 13);
+
+            const s = Scard[ranA]
+            ALL.appendChild(s)
+
+            const h = Hcard[ranB]
+            ALL.appendChild(h)
+
+            const d = Dcard[ranC]
+            ALL.appendChild(d)
+
+            const c = Ccard[ranD]
+            ALL.appendChild(c)
+        }
+
+        const Card1 = document.getElementById("Card1")
+        const Card2 = document.getElementById("Card2")
+        const Card3 = document.getElementById("Card3")
+
+
+
+        for(k = 0;k < 13;k++){
+            const CAll = ALL.children[k]
+            Card1.append(CAll)
+        }
+        for(k = 0;k < 13;k++){
+            const CAll = ALL.children[k]
+            Card2.append(CAll)
+        }
+        for(k = 0;k < 13;k++){
+            const CAll = ALL.children[k]
+            Card3.append(CAll)
+        }
+
+
+        console.log(CardBox)
+    </script>
+</body>
+
+</html>
