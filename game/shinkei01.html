@@ -21,8 +21,8 @@
             min-width: 20px;
             margin-right: 20px;
             padding: 60px 30px;
-            background-color: blue;
-            color: #ffffff;
+            border: 2px solid black;
+            color: #000000;
         }
 
         .Hcard {
@@ -30,8 +30,8 @@
             margin-right: 20px;
             padding: 20px 10px;
             padding: 60px 30px;
-            background-color: red;
-            color: #ffffff;
+            border: 2px solid black;
+            color: #000000;
         }
 
         .Dcard {
@@ -39,7 +39,7 @@
             margin-right: 20px;
             padding: 20px 10px;
             padding: 60px 30px;
-            background-color: pink;
+            border: 2px solid black;
             color: #000000;
         }
 
@@ -48,7 +48,7 @@
             margin-right: 20px;
             padding: 20px 10px;
             padding: 60px 30px;
-            background-color: yellow;
+            border: 2px solid black;
             color: #000000;
         }
     </style>
@@ -82,7 +82,7 @@
         for (i = 13; i > 0; i--) {
             const newHeart = document.createElement("div");
             newHeart.setAttribute("class", "Hcard");
-            newHeart.textContent = [i]
+
             document.getElementById("all").prepend(newHeart);
             CardBox.push("H" + i)
         }
@@ -90,7 +90,7 @@
         for (i = 13; i > 0; i--) {
             const newDia = document.createElement("div");
             newDia.setAttribute("class", "Dcard");
-            newDia.textContent = [i]
+
             document.getElementById("all").prepend(newDia);
             CardBox.push("D" + i)
         }
@@ -98,7 +98,7 @@
         for (i = 13; i > 0; i--) {
             const newClover = document.createElement("div");
             newClover.setAttribute("class", "Ccard");
-            newClover.textContent = [i]
+
             document.getElementById("all").prepend(newClover);
             CardBox.push("C" + i)
         }
@@ -153,6 +153,34 @@
             Card3.append(CAll)
         }
 
+        const Cards = [Array.from(Scard), Array.from(Hcard), Array.from(Dcard), Array.from(Ccard)]
+
+        for (i = 0; i < 4; i++) {
+            Cards[i].forEach(function (Scard) {
+                Scard.addEventListener("click", function () {
+                    for (j = 0; j < 13; j++) {
+                        Scard.style.backgroundColor = "gray"
+                        CardBox[j] = "〇"
+                    }
+                })
+            });
+            Cards[i].forEach(function (Hcard) {
+                Hcard.addEventListener("click", function () {
+                    Hcard.style.backgroundColor = "gray"
+                })
+            });
+            Cards[i].forEach(function (Dcard) {
+                Dcard.addEventListener("click", function () {
+                    Dcard.style.backgroundColor = "gray"
+                })
+            });
+            Cards[i].forEach(function (Ccard) {
+                Ccard.addEventListener("click", function () {
+                    Ccard.style.backgroundColor = "gray"
+                })
+            });
+
+        }
         console.log(CardBox)
     </script>
 </body>
