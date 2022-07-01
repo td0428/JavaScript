@@ -18,38 +18,23 @@
 
 
         .Scard {
-            min-width: 20px;
+            width: 100px;
             margin-right: 20px;
-            padding: 60px 30px;
-            border: 2px solid black;
-            color: #000000;
         }
 
         .Hcard {
-            min-width: 20px;
+            width: 100px;
             margin-right: 20px;
-            padding: 20px 10px;
-            padding: 60px 30px;
-            border: 2px solid black;
-            color: #000000;
         }
 
         .Dcard {
-            min-width: 20px;
+            width: 100px;
             margin-right: 20px;
-            padding: 20px 10px;
-            padding: 60px 30px;
-            border: 2px solid black;
-            color: #000000;
         }
 
         .Ccard {
-            min-width: 20px;
+            width: 100px;
             margin-right: 20px;
-            padding: 20px 10px;
-            padding: 60px 30px;
-            border: 2px solid black;
-            color: #000000;
         }
     </style>
 </head>
@@ -72,7 +57,8 @@
 
         //4種類のdivを作成し、allに全部入れる
         for (i = 13; i > 0; i--) {
-            const newSpade = document.createElement("div");
+            const newSpade = document.createElement("img");
+            newSpade.setAttribute("src", "images/toranpu_ura.jpg");
             newSpade.setAttribute("class", "Scard");
             newSpade.textContent = [i]
             document.getElementById("all").prepend(newSpade);
@@ -80,7 +66,8 @@
         }
 
         for (i = 13; i > 0; i--) {
-            const newHeart = document.createElement("div");
+            const newHeart = document.createElement("img");
+            newHeart.setAttribute("src", "images/toranpu_ura.jpg");
             newHeart.setAttribute("class", "Hcard");
 
             document.getElementById("all").prepend(newHeart);
@@ -88,7 +75,8 @@
         }
 
         for (i = 13; i > 0; i--) {
-            const newDia = document.createElement("div");
+            const newDia = document.createElement("img");
+            newDia.setAttribute("src", "images/toranpu_ura.jpg");
             newDia.setAttribute("class", "Dcard");
 
             document.getElementById("all").prepend(newDia);
@@ -96,7 +84,8 @@
         }
 
         for (i = 13; i > 0; i--) {
-            const newClover = document.createElement("div");
+            const newClover = document.createElement("img");
+            newClover.setAttribute("src", "images/toranpu_ura.jpg");
             newClover.setAttribute("class", "Ccard");
 
             document.getElementById("all").prepend(newClover);
@@ -159,7 +148,8 @@
             Cards[i].forEach(function (Scard) {
                 Scard.addEventListener("click", function () {
                     for (j = 0; j < 13; j++) {
-                        Scard.style.backgroundColor = "gray"
+                        Scard.style.backgroundimage =" "
+                        Scard.style.backgroundimage ="url(images/toranpu_ura.jpg)"
                         CardBox[j] = "〇"
                     }
                 })
