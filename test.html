@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="test_images/img1.jpg" alt="" id="ran">
+    <button id="btn"></button>
+
+    <script>
+        const ran = document.getElementById("ran")
+        const btn = document.getElementById("btn")
+
+        const img = ["test_images/img1.jpg","test_images/img2.jpg","test_images/img3.jpg","test_images/img4.jpg","test_images/img5.jpg"]
+
+        btn.addEventListener("click", function () {
+            const n = 1 + Math.floor(Math.random() * 4)
+            ran.src = img[n]
+        })
+
+    </script>
+</body>
+
+</html>
