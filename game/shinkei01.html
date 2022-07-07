@@ -14,6 +14,7 @@
         #Card3 {
             margin-bottom: 20px;
             display: flex;
+
         }
 
 
@@ -52,7 +53,10 @@
 
     <script>
 
-        const CardBox = []
+        const SCardBox = []
+        const HCardBox = []
+        const DCardBox = []
+        const CCardBox = []
 
 
         //4種類のdivを作成し、allに全部入れる
@@ -60,9 +64,8 @@
             const newSpade = document.createElement("img");
             newSpade.setAttribute("src", "images/toranpu_ura.jpg");
             newSpade.setAttribute("class", "Scard");
-            newSpade.textContent = [i]
             document.getElementById("all").prepend(newSpade);
-            CardBox.push("S" + i)
+            SCardBox.push("S" + i)
         }
 
         for (i = 13; i > 0; i--) {
@@ -71,7 +74,7 @@
             newHeart.setAttribute("class", "Hcard");
 
             document.getElementById("all").prepend(newHeart);
-            CardBox.push("H" + i)
+            HCardBox.push("H" + i)
         }
 
         for (i = 13; i > 0; i--) {
@@ -80,7 +83,7 @@
             newDia.setAttribute("class", "Dcard");
 
             document.getElementById("all").prepend(newDia);
-            CardBox.push("D" + i)
+            DCardBox.push("D" + i)
         }
 
         for (i = 13; i > 0; i--) {
@@ -89,7 +92,7 @@
             newClover.setAttribute("class", "Ccard");
 
             document.getElementById("all").prepend(newClover);
-            CardBox.push("C" + i)
+            CCardBox.push("C" + i)
         }
 
         const Scard = document.getElementsByClassName("Scard")
@@ -98,6 +101,9 @@
         const Ccard = document.getElementsByClassName("Ccard")
 
         const ALL = document.getElementById("all")
+
+
+
 
 
 
@@ -142,34 +148,35 @@
             Card3.append(CAll)
         }
 
-        const Cards = [Array.from(Scard), Array.from(Hcard), Array.from(Dcard), Array.from(Ccard)]
 
-        for (i = 0; i < 4; i++) {
-            Cards[i].forEach(function (Scard) {
-                Scard.addEventListener("click", function () {
-                    for (j = 0; j < 13; j++) {
-                        Scard.style.backgroundimage ="url(images/tramp.png)"
-                        CardBox[j] = "〇"
-                    }
-                })
-            });
-            Cards[i].forEach(function (Hcard) {
-                Hcard.addEventListener("click", function () {
-                    Hcard.style.backgroundColor = "gray"
-                })
-            });
-            Cards[i].forEach(function (Dcard) {
-                Dcard.addEventListener("click", function () {
-                    Dcard.style.backgroundColor = "gray"
-                })
-            });
-            Cards[i].forEach(function (Ccard) {
-                Ccard.addEventListener("click", function () {
-                    Ccard.style.backgroundColor = "gray"
-                })
-            });
+       const Cards = [Array.from(Scard), Array.from(Hcard), Array.from(Dcard), Array.from(Ccard)]
 
-        }
+
+        Cards[0].forEach(function (Scard) {
+            Scard.addEventListener("click", function () {
+                for (j = 0; j < 13; j++) {
+                    Scard.style.opacity = "0";
+                    Scard.textContent = SCardBox.shift()
+                }
+            })
+        });
+        Cards[1].forEach(function (Hcard) {
+            Hcard.addEventListener("click", function () {
+                Hcard.style.backgroundColor = "gray"
+            })
+        });
+        Cards[2].forEach(function (Dcard) {
+            Dcard.addEventListener("click", function () {
+                Dcard.style.backgroundColor = "gray"
+            })
+        });
+        Cards[3].forEach(function (Ccard) {
+            Ccard.addEventListener("click", function () {
+                Ccard.style.backgroundColor = "gray"
+            })
+        });
+
+
         console.log(CardBox)
     </script>
 </body>
