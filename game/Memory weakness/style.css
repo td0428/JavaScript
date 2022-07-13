@@ -1,0 +1,19 @@
+body {
+    background-image: url(images/casino_table.jpg);
+  }
+
+  table {
+    margin: 10px auto;
+  }
+
+  td.card {
+    width: 95px;
+    height: 145px;
+    margin: 10px;
+    background-size: cover;
+    border-radius: 5px;
+  }
+
+  td.card.back {
+    background-image: url(images/z01.jpg) !important;
+  }

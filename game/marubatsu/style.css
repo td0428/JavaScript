@@ -1,0 +1,58 @@
+h1 {
+    background-color: rgb(255, 204, 163);
+    display: flex;
+}
+
+h1::before,
+h1::after {
+    flex: 1;
+    height: 3px;
+    content: '';
+    background-color: red;
+    position: relative;
+    top: 1.4rem;
+}
+
+h1::before {
+    margin-right: 1rem;
+}
+
+h1::after {
+    margin-left: 1rem;
+}
+
+#masuA {
+    display: flex;
+    justify-content: center;
+}
+
+#masuB {
+    display: flex;
+    justify-content: center;
+}
+
+#masuC {
+    display: flex;
+    justify-content: center;
+}
+
+#masuA div,
+#masuB div,
+#masuC div {
+    width: 100px;
+    height: 100px;
+    padding: 50px;
+    background-color: skyblue;
+    border: 1px solid black;
+    font-size: 100px;
+}
+
+#masuA div:hover,
+#masuB div:hover,
+#masuC div:hover {
+    background-color: rgb(0, 183, 255);
+}
+
+#end {
+    font-size: 20px;
+}

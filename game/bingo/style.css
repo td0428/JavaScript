@@ -1,0 +1,41 @@
+#main {
+    width: 500px;
+    height: 500px;
+    padding: 0 210px 260px 0;
+    background-color: orange;
+
+}
+
+h1 {
+    margin: 0 0 0 60px;
+    letter-spacing: 105px;
+    font-size: 50px;
+    color: purple;
+}
+
+#Rs {
+    display: flex;
+}
+
+.B1,
+.B2,
+.B3,
+.B4,
+.B5,
+.free {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    padding: 20px;
+    background-color: yellow;
+    border-radius: 90px 90px 10px 10px;
+    border: 1px solid;
+    font-size: 35px;
+    text-align: center;
+}
+button,#Count{
+    width: 200px;
+    height: 100px;
+    margin-top: 50px;
+    font-size: 50px;
+}
